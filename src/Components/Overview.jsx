@@ -1,9 +1,36 @@
 import React from "react";
+import { overviewDetails } from "../Info/Info";
 
 const Overview = () => {
   return (
-    <div className="h-64 w-[79vw] bg-white border border-slate-200 rounded-md p-4 m-4">
-     <hr/>
+    <div className="h-64 w-[78vw] absolute top-[24px] left-[280px] bg-white border border-slate-200 rounded-md p-4 gap-2 flex items-center flex-col">
+      <div className="flex justify-between items-center w-full h-1/2">
+        <div>P</div>
+        <div className="flex flex-col justify-around items-end h-full">
+          <div className="flex items-center gap-4">
+            <button className="bg-white rounded-md w-auto py-2 px-4 font-medium border">
+              Apply Leave
+            </button>
+            <button className="bg-black text-white rounded-md py-2 px-4 font-medium">
+              Selfie Clock In
+            </button>
+          </div>
+          <div className="font-bold text-xl text-black ">
+            <p>00:00:00</p>
+          </div>
+        </div>
+      </div>
+      <hr className="w-full border-t border-slate-200 my-2" />
+      <div className="h-1/2 w-full flex">
+        {Object.entries(overviewDetails).map(([key, value], idx) => {
+          return (
+            <div className="flex flex-col w-1/5 h-full justify-evenly  border-r border-slate-200 p-2 text-black">
+              <span>{key}</span>
+              <span className="font-semibold text-2xl">{value}</span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
