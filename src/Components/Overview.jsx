@@ -3,10 +3,23 @@ import { overviewDetails } from "../Info/Info";
 
 const Overview = () => {
   return (
-    <div className="h-64 w-[78vw] absolute top-[24px] left-[280px] bg-white border border-slate-200 rounded-md p-4 gap-2 flex items-center flex-col">
+    <main className="h-[36vh] w-[79vw] bg-white border border-slate-200 rounded-md p-4 gap-2 flex items-center flex-col">
       <div className="flex justify-between items-center w-full h-1/2">
-        <div>P</div>
-        <div className="flex flex-col justify-around items-end h-full">
+        <div className="flex items-center justify-between gap-6">
+          <div>
+            <img
+              src="/profilePic.webp"
+              alt="profile-pic"
+              className="h-[10vh]  rounded-full"
+            />
+            <figure className="bg-green-500 rounded-full w-[1vw] h-[1vw] relative left-12 bottom-4"></figure>
+          </div>
+          <div className="flex flex-col justify-between h-full gap-2">
+            <span className="font-semibold text-2xl text-black">Rebbecca</span>
+            <span className="text-gray-500 text-sm">rebbecca@fluidesigns.in</span>
+          </div>
+        </div>
+        <div className="flex flex-col justify-around items-end h-full gap-4">
           <div className="flex items-center gap-4">
             <button className="bg-white rounded-md w-auto py-2 px-4 font-medium border">
               Apply Leave
@@ -24,14 +37,14 @@ const Overview = () => {
       <div className="h-1/2 w-full flex">
         {Object.entries(overviewDetails).map(([key, value], idx) => {
           return (
-            <div className="flex flex-col w-1/5 h-full justify-evenly  border-r border-slate-200 p-2 text-black">
+            <div key={idx} className="flex flex-col w-1/5 h-full justify-evenly  border-r border-slate-200 p-2 text-black">
               <span>{key}</span>
-              <span className="font-semibold text-2xl">{value}</span>
+              <span className="font-semibold text-xl">{value}</span>
             </div>
           );
         })}
       </div>
-    </div>
+    </main>
   );
 };
 

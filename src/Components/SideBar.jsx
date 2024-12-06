@@ -50,7 +50,7 @@ export default function SideBar() {
                     <span className="ml-4 text-2xl">
                       {item.icon}
                     </span>
-                    <p className="m-3 text-md">{item.title}</p>
+                    <p className="m-3 text-[16px]">{item.title}</p>
                   </li>
                 </Link>
               );
